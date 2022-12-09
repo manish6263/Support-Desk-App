@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Header from './components/Header';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import NewTicket from './pages/NewTicket';
+import PrivateRoute from './components/PrivateRoute';
+import Tickets from './pages/Tickets';
+import Ticket from './pages/Ticket';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <div className="container">
+          <Header />
+          <Routes>
+            <Route exact path='/' element={<Home />} />
+            <Route exact path='/login' element={<Login />} />
+            <Route exact path='/register' element={<Register />} />
+            <Route exact path='/new-ticket' element={<PrivateRoute />}>
+              <Route exact path='/new-ticket' element={<NewTicket />} />
+            </Route>
+            <Route exact path='/tickets' element={<PrivateRoute />}>
+              <Route exact path='/tickets' element={<Tickets />} />
+            </Route>
+            <Route exact path='/ticket/:ticketId' element={<PrivateRoute />}>
+              <Route exact path='/ticket/:ticketId' element={<Ticket />} />
+            </Route>
+          </Routes>
+        </div>
+      </Router>
+      <ToastContainer />
+    </>
   );
 }
 
