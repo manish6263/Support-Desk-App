@@ -1,14 +1,11 @@
 {
-  "name": "support-desk",
+  "name": "support-desk-backend",
   "version": "1.0.0",
   "description": "support ticket app",
-  "proxy": "http://localhost:5000",
   "main": "server.js",
+  "proxy": "http://localhost:3000",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Manish Patel",
   "license": "ISC",
@@ -19,7 +16,9 @@
     "express": "^4.18.1",
     "express-async-handler": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.4.4",
-    "react-scripts": "^5.0.1"
+    "mongoose": "^6.4.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
   }
 }
