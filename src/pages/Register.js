@@ -13,9 +13,9 @@ function Register() {
         password: '',
         password2: '',
     });
-    
+
     const { name, email, password, password2 } = formData;
-    
+
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -49,9 +49,11 @@ function Register() {
             toast.error('Password do not match');
             return;
         }
-        else {
+        try {
             const userData = { name, email, password };
             dispatch(register(userData));
+        } catch (error) {
+            toast.error('Could not register');
         }
     }
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-// import { toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { FaSignInAlt } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -43,9 +43,13 @@ function Login() {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        const userData = { email, password };
-        console.log(userData);
-        dispatch(login(userData));
+        try {
+            const userData = { email, password };
+            console.log(userData);
+            dispatch(login(userData));
+        } catch (error) {
+            toast.error('Could not login');
+        }
     }
 
     if (isLoading) {
