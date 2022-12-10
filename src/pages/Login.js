@@ -44,7 +44,6 @@ function Login() {
         e.preventDefault();
         try {
             const userData = { email, password };
-            // console.log(userData);
             dispatch(login(userData));
         } catch (error) {
             toast.error('Could not login');
