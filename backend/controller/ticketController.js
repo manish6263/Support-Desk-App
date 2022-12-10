@@ -3,7 +3,7 @@ const Ticket = require('../models/ticketModel');
 const User = require('../models/userModel');
 
 //@desc Get user tickets..
-//@route GET /api/tickets
+//@route GET /tickets
 //@access private
 const getTickets = asyncHandler(async (req, res) => {
 
@@ -20,7 +20,7 @@ const getTickets = asyncHandler(async (req, res) => {
 });
 
 //@desc Get user ticket..
-//@route GET /api/tickets/:id
+//@route GET /tickets/:id
 //@access private
 const getTicket = asyncHandler(async (req, res) => {
 
@@ -48,7 +48,7 @@ const getTicket = asyncHandler(async (req, res) => {
 });
 
 //@desc Create a new ticket..
-//@route POST /api/tickets
+//@route POST /tickets
 //@access private
 const createTicket = asyncHandler(async (req, res) => {
 
@@ -77,7 +77,7 @@ const createTicket = asyncHandler(async (req, res) => {
 });
 
 //@desc Delete user ticket..
-//@route DELETE /api/tickets/:id
+//@route DELETE /tickets/:id
 //@access private
 const deleteTicket = asyncHandler(async (req, res) => {
 
@@ -105,8 +105,8 @@ const deleteTicket = asyncHandler(async (req, res) => {
     res.status(200).json({ success: true });
 });
 
-//@desc Get user ticket..
-//@route GET /api/tickets/:id
+//@desc Update user ticket..
+//@route GET /tickets/:id
 //@access private
 const updateTicket = asyncHandler(async (req, res) => {
 

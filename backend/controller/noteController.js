@@ -5,7 +5,7 @@ const User = require("../models/userModel");
 
 
 // @desc    Get notes for a ticket
-// @route   GET /api/tickets/:ticketId/notes
+// @route   GET /tickets/:ticketId/notes
 // @access  Private
 const getNotes = asyncHandler(async (req, res) => {
 
@@ -28,7 +28,7 @@ const getNotes = asyncHandler(async (req, res) => {
 });
 
 // @desc    Create ticket note
-// @route   POST /api/tickets/:ticketId/notes
+// @route   POST /tickets/:ticketId/notes
 // @access  Private
 const addNote = asyncHandler(async (req, res) => {
 
