@@ -44,6 +44,7 @@ function Login() {
     const onSubmit = (e) => {
         e.preventDefault();
         const userData = { email, password };
+        console.log(userData);
         dispatch(login(userData));
     }
 
